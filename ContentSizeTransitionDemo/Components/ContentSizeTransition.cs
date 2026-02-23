@@ -36,7 +36,7 @@ namespace ContentSizeTransitionDemo.Components
                 {
                     From = DesiredSize,
                     To = currentMeasureSize,
-                    Duration = TimeSpan.FromSeconds(0.3),
+                    Duration = TimeSpan.FromSeconds(0.15),
                     FillBehavior = FillBehavior.HoldEnd,
                     EasingFunction = _easing
                 });
