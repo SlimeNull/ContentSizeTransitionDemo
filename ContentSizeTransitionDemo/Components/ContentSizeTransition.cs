@@ -14,13 +14,13 @@ namespace ContentSizeTransitionDemo.Components
         private Size _targetMeasureSize;
         private static readonly IEasingFunction _easing = new SineEase(){EasingMode = EasingMode.EaseOut};
 
-        public Size MeasureSizeAnimated
+        private Size MeasureSizeAnimated
         {
             get { return (Size)GetValue(SizeOverrideProperty); }
             set { SetValue(SizeOverrideProperty, value); }
         }
 
-        public static readonly DependencyProperty SizeOverrideProperty =
+        private static readonly DependencyProperty SizeOverrideProperty =
             DependencyProperty.Register(nameof(MeasureSizeAnimated), typeof(Size), typeof(ContentSizeTransition),
                 new FrameworkPropertyMetadata(default(Size), FrameworkPropertyMetadataOptions.AffectsMeasure));
 
