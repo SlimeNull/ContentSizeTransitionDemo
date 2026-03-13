@@ -16,24 +16,9 @@ namespace ContentSizeTransitionDemo
     /// </summary>
     public partial class MainWindow : Window
     {
-        int _clickIndex = 0;
-
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void ToggleContent_Click(object sender, RoutedEventArgs e)
-        {
-            _clickIndex++;
-            var height = _clickIndex % 2 == 0 ? 50 : 150;
-
-            container.Content = new TextBlock()
-            {
-                MinHeight = height,
-                Background = Brushes.AliceBlue,
-                Text = $"Height: {height}",
-            };
         }
     }
 }

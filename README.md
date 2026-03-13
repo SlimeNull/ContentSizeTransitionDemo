@@ -2,7 +2,7 @@
 
 一个基于 WPF 的最小示例项目，用于演示**内容尺寸变化时的平滑过渡效果**。
 
-项目中实现了一个自定义控件 `ContentSizeTransition`。当其 `Content` 的期望尺寸发生变化时，控件会对测量尺寸执行短时动画，从而避免界面在高度变化时“瞬间跳变”。
+项目中实现了一个自定义控件 `SizeTransitionContentPresenter`。当其 `Content` 的期望尺寸发生变化时，控件会对测量尺寸执行短时动画，从而避免界面在高度变化时“瞬间跳变”。
 
 ## 项目目的
 
@@ -14,27 +14,19 @@
 - 在旧尺寸和新尺寸之间插入过渡动画
 - 让外层布局在动画期间逐步更新，而不是一次性突变
 
-## 效果说明
+## 效果演示
 
-示例窗口中包含：
+示例程序中包含一个 TabControl, 每一个 TabItem 的内容大小都是不同的.
 
-- 一个 `Toggle content` 按钮
-- 一个带红色边框的内容容器
-
-每次点击按钮，容器内部内容会在两种高度之间切换：
-
-- `50`
-- `150`
-
-由于内容被放置在 `ContentSizeTransition` 中，因此高度变化会以动画方式过渡，而不是立即跳变。
+![preivew](Assets/demo.webp)
 
 ## 技术实现
 
-核心实现位于 `ContentSizeTransitionDemo/Components/ContentSizeTransition.cs`。
+核心实现位于 `SizeTransitionContentPresenterDemo/Components/SizeTransitionContentPresenter.cs`。
 
 ### 实现思路
 
-`ContentSizeTransition` 继承自 `ContentControl`，并通过以下方式实现尺寸动画：
+`SizeTransitionContentPresenter` 继承自 `ContentControl`，并通过以下方式实现尺寸动画：
 
 1. 在 `MeasureOverride()` 中先调用基类测量，得到内容当前真实需要的尺寸。
 2. 如果检测到目标尺寸发生变化：
@@ -58,8 +50,8 @@
 
 示例窗口位于：
 
-- `ContentSizeTransitionDemo/MainWindow.xaml`
-- `ContentSizeTransitionDemo/MainWindow.xaml.cs`
+- `SizeTransitionContentPresenterDemo/MainWindow.xaml`
+- `SizeTransitionContentPresenterDemo/MainWindow.xaml.cs`
 
 窗口特点：
 
@@ -75,16 +67,16 @@
 ## 项目结构
 
 ```text
-ContentSizeTransitionDemo.slnx
+SizeTransitionContentPresenterDemo.slnx
 README.md
-ContentSizeTransitionDemo/
+SizeTransitionContentPresenterDemo/
 ├─ App.xaml
 ├─ App.xaml.cs
 ├─ MainWindow.xaml
 ├─ MainWindow.xaml.cs
 ├─ Components/
-│  └─ ContentSizeTransition.cs
-└─ ContentSizeTransitionDemo.csproj
+│  └─ SizeTransitionContentPresenter.cs
+└─ SizeTransitionContentPresenterDemo.csproj
 ```
 
 ## 运行环境
@@ -110,7 +102,7 @@ ContentSizeTransitionDemo/
 在项目根目录执行：
 
 ```bash
-dotnet run --project .\ContentSizeTransitionDemo\ContentSizeTransitionDemo.csproj
+dotnet run --project .\SizeTransitionContentPresenterDemo\SizeTransitionContentPresenterDemo.csproj
 ```
 
 ## 可扩展方向
@@ -125,7 +117,7 @@ dotnet run --project .\ContentSizeTransitionDemo\ContentSizeTransitionDemo.cspro
 
 ## 适用场景
 
-`ContentSizeTransition` 适合用于以下场景：
+`SizeTransitionContentPresenter` 适合用于以下场景：
 
 - 折叠 / 展开面板
 - 表单验证提示的动态出现

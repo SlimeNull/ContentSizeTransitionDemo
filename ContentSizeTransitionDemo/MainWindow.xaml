@@ -9,17 +9,58 @@
         SizeToContent="Height"
         Title="MainWindow" Height="450" Width="400"
         ResizeMode="NoResize">
+    <Window.Resources>
+        <SolidColorBrush x:Key="TabItem.Selected.Background" Color="#FFFFFF"/>
+        <SolidColorBrush x:Key="TabItem.Selected.Border" Color="#ACACAC"/>
+    </Window.Resources>
     <Grid>
-        <StackPanel Orientation="Vertical" 
-                    Margin="14">
-            <Button Content="Toggle content" Click="ToggleContent_Click"
-                    Margin="0 0 0 8"/>
-            <Border BorderThickness="1"
-                    BorderBrush="Red">
-                <comp:ContentSizeTransition x:Name="container">
-
-                </comp:ContentSizeTransition>
-            </Border>
-        </StackPanel>
+        <comp:TabControlWithContentSizeTransition>
+            <TabItem Header="Tab 1">
+                <StackPanel Margin="10">
+                    <TextBlock Text="This is the content of Tab 1." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 1." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 1." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 1." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 1." FontSize="16" />
+                    <Button Content="Button 1" Margin="0,10,0,0" />
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Tab 2">
+                <StackPanel Margin="10">
+                    <TextBlock Text="This is the content of Tab 2." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 2." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 2." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 2." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 2." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 2." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 2." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 2." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 2." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 2." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 2." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 2." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 2." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 2." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 2." FontSize="16" />
+                    <Button Content="Button 1" Margin="0,10,0,0" />
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Tab 3">
+                <StackPanel Margin="10">
+                    <TextBlock Text="This is the content of Tab 3." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 3." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 3." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 3." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 3." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 3." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 3." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 3." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 3." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 3." FontSize="16" />
+                    <TextBlock Text="This is the content of Tab 3." FontSize="16" />
+                    <Button Content="Button 1" Margin="0,10,0,0" />
+                </StackPanel>
+            </TabItem>
+        </comp:TabControlWithContentSizeTransition>
     </Grid>
 </Window>
